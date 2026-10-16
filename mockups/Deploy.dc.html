@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Install apps</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F3F4F6}
+a{color:#0E6B66}a:hover{color:#094A47}
+</style>
+</helmet>
+<div style="min-height: 100vh; display: flex; flex-wrap: wrap; font-family: 'IBM Plex Sans', system-ui, sans-serif; color: #15181E; background: #F3F4F6">
+
+  <nav aria-label="Main" style="flex: 1 1 240px; max-width: 100%; background: #15181E; color: #E6E8EC; padding: 28px 20px; box-sizing: border-box; display: flex; flex-direction: column; gap: 6px">
+    <div style="display: flex; align-items: center; gap: 10px; padding: 0 8px 24px">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#5FC4BD" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12s3.5-6 9-6 9 6 9 6-3.5 6-9 6-9-6-9-6z"></path><circle cx="12" cy="12" r="2.5"></circle></svg>
+      <span style="font-size: 20px; font-weight: 700; letter-spacing: -0.01em">Fleetwatch</span>
+    </div>
+    <a href="Main.dc.html" style="display: block; padding: 12px; border-radius: 8px; color: #C9CDD4; text-decoration: none">Home</a>
+    <a href="Device.dc.html" style="display: block; padding: 12px; border-radius: 8px; color: #C9CDD4; text-decoration: none">Computers</a>
+    <a href="Deploy.dc.html" style="display: block; padding: 12px; border-radius: 8px; background: #262A33; color: #FFFFFF; text-decoration: none; font-weight: 600">Install apps</a>
+    <a href="Remote.dc.html" style="display: block; padding: 12px; border-radius: 8px; color: #C9CDD4; text-decoration: none">Help sessions</a>
+    <a href="Tickets.dc.html" style="display: flex; justify-content: space-between; padding: 12px; border-radius: 8px; color: #C9CDD4; text-decoration: none">Tickets <span style="background: #C26A0A; color: #FFFFFF; font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 999px">2</span></a>
+    <a href="Network.dc.html" style="display: block; padding: 12px; border-radius: 8px; color: #C9CDD4; text-decoration: none">Networks</a>
+    <div style="margin-top: auto; padding: 16px 8px 0; border-top: 1px solid #2E333D; font-size: 13px; color: #A9AFB9">Signed in as Adam</div>
+  </nav>
+
+  <main style="flex: 999 1 560px; min-width: 0; padding: 40px 48px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px">
+    <header>
+      <h1 style="margin: 0; font-size: 32px; font-weight: 700; letter-spacing: -0.02em">Install an app</h1>
+      <p style="margin: 6px 0 0; color: #4B5260; font-size: 16px">Pick apps and computers. They install in the background; nobody has to click anything.</p>
+    </header>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start">
+      <div style="flex: 2 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+
+        <section aria-label="Choose apps" style="background: #FFFFFF; border: 1px solid #DCDFE4; border-radius: 12px; padding: 24px; display: flex; flex-direction: column; gap: 14px">
+          <h2 style="margin: 0; font-size: 18px; font-weight: 600">1. Which apps?</h2>
+          <label for="appsearch" style="font-size: 14px; color: #4B5260">Search apps</label>
+          <input id="appsearch" type="search" value="libre" style="font: inherit; padding: 12px 14px; border: 1px solid #C4C9D1; border-radius: 8px; background: #FFFFFF; color: #15181E">
+          <div style="display: flex; flex-wrap: wrap; gap: 10px">
+            <sc-for list="{{picked}}" as="a" hint-placeholder-count="3">
+              <span style="display: inline-flex; align-items: center; gap: 8px; padding: 8px 8px 8px 14px; border-radius: 999px; background: #E3F1F0; color: #0A4F4B; font-weight: 500">{{a}}
+                <button type="button" aria-label="Remove" style="width: 28px; height: 28px; border-radius: 50%; border: 0; background: transparent; color: #0A4F4B; cursor: pointer; font: inherit; font-size: 18px; line-height: 1">×</button>
+              </span>
+            </sc-for>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 14px; color: #4B5260; align-items: center">
+            <span>Family favorites:</span>
+            <button type="button" style="padding: 8px 12px; border-radius: 8px; border: 1px solid #C4C9D1; background: #FFFFFF; font: inherit; cursor: pointer">+ Zoom</button>
+            <button type="button" style="padding: 8px 12px; border-radius: 8px; border: 1px solid #C4C9D1; background: #FFFFFF; font: inherit; cursor: pointer">+ Firefox</button>
+            <button type="button" style="padding: 8px 12px; border-radius: 8px; border: 1px solid #C4C9D1; background: #FFFFFF; font: inherit; cursor: pointer">+ Spotify</button>
+          </div>
+        </section>
+
+        <section aria-label="Choose computers" style="background: #FFFFFF; border: 1px solid #DCDFE4; border-radius: 12px; padding: 24px; display: flex; flex-direction: column; gap: 4px">
+          <h2 style="margin: 0 0 8px; font-size: 18px; font-weight: 600">2. Which computers?</h2>
+          <sc-for list="{{targets}}" as="t" hint-placeholder-count="5">
+            <label style="display: flex; align-items: center; gap: 14px; padding: 12px 0; border-top: 1px solid #ECEEF1; cursor: pointer">
+              <input type="checkbox" checked="{{t.on}}" style="width: 20px; height: 20px; accent-color: #0E6B66">
+              <span style="flex: 1">{{t.name}}</span>
+              <span style="color: #4B5260; font-size: 14px">{{t.state}}</span>
+            </label>
+          </sc-for>
+        </section>
+
+        <section aria-label="When" style="background: #FFFFFF; border: 1px solid #DCDFE4; border-radius: 12px; padding: 24px; display: flex; flex-direction: column; gap: 12px">
+          <h2 style="margin: 0; font-size: 18px; font-weight: 600">3. When?</h2>
+          <div style="display: flex; flex-wrap: wrap; gap: 10px">
+            <label style="display: flex; align-items: center; gap: 8px; padding: 12px 16px; border: 2px solid #0E6B66; border-radius: 8px; cursor: pointer"><input type="radio" name="when" checked style="accent-color: #0E6B66">Right now</label>
+            <label style="display: flex; align-items: center; gap: 8px; padding: 12px 16px; border: 1px solid #C4C9D1; border-radius: 8px; cursor: pointer"><input type="radio" name="when" style="accent-color: #0E6B66">Tonight at 2 AM</label>
+            <label style="display: flex; align-items: center; gap: 8px; padding: 12px 16px; border: 1px solid #C4C9D1; border-radius: 8px; cursor: pointer"><input type="radio" name="when" style="accent-color: #0E6B66">Next time it's turned on</label>
+          </div>
+          <label style="display: flex; align-items: center; gap: 10px; font-size: 15px; margin-top: 4px"><input type="checkbox" checked style="width: 18px; height: 18px; accent-color: #0E6B66">Put a shortcut on their desktop</label>
+        </section>
+      </div>
+
+      <aside aria-label="Summary" style="flex: 1 1 280px; min-width: 0; background: #FFFFFF; border: 1px solid #DCDFE4; border-radius: 12px; padding: 24px; display: flex; flex-direction: column; gap: 14px">
+        <h2 style="margin: 0; font-size: 18px; font-weight: 600">Ready to go</h2>
+        <p style="margin: 0; font-size: 15px; color: #343A45">3 apps to 2 computers, right now. Grandma's PC is asleep, so hers will install when she turns it on.</p>
+        <button type="button" style="padding: 14px 18px; border-radius: 8px; border: 0; background: {{accent}}; color: #FFFFFF; font: inherit; font-weight: 600; cursor: pointer">Install on 2 computers</button>
+        <h3 style="margin: 12px 0 0; font-size: 15px; font-weight: 600">Recently</h3>
+        <sc-for list="{{recent}}" as="r" hint-placeholder-count="3">
+          <div style="font-size: 14px; border-top: 1px solid #ECEEF1; padding-top: 10px">
+            <div style="font-weight: 500">{{r.what}}</div>
+            <div style="color: #4B5260">{{r.result}}</div>
+          </div>
+        </sc-for>
+      </aside>
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#0E6B66","options":["#0E6B66","#2B4FB8","#7A3E9D"]},"$preview":{"width":1440,"height":1040}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      accent: this.props.accent ?? '#0E6B66',
+      picked: ['LibreOffice', 'VLC media player', 'Google Chrome'],
+      targets: [
+        { name: "Mom & Dad's Laptop", state: 'Online', on: true },
+        { name: "Grandma's PC", state: 'Asleep · will install later', on: true },
+        { name: "Adam's Desktop", state: 'Online', on: false },
+        { name: 'Dell Precision 5570', state: 'Online', on: false },
+        { name: "Sarah's Laptop", state: 'Online', on: false }
+      ],
+      recent: [
+        { what: 'Zoom → Grandma’s PC', result: 'Installed Sunday' },
+        { what: 'Firefox → Sarah’s Laptop', result: 'Installed last week' },
+        { what: 'Removed a toolbar → Mom & Dad’s Laptop', result: 'Done last week' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

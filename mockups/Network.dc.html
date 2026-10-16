@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Networks</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F3F4F6}
+a{color:#0E6B66}a:hover{color:#094A47}
+</style>
+</helmet>
+<div style="min-height: 100vh; display: flex; flex-wrap: wrap; font-family: 'IBM Plex Sans', system-ui, sans-serif; color: #15181E; background: #F3F4F6">
+
+  <nav aria-label="Main" style="flex: 1 1 240px; max-width: 100%; background: #15181E; color: #E6E8EC; padding: 28px 20px; box-sizing: border-box; display: flex; flex-direction: column; gap: 6px">
+    <div style="display: flex; align-items: center; gap: 10px; padding: 0 8px 24px">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#5FC4BD" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12s3.5-6 9-6 9 6 9 6-3.5 6-9 6-9-6-9-6z"></path><circle cx="12" cy="12" r="2.5"></circle></svg>
+      <span style="font-size: 20px; font-weight: 700; letter-spacing: -0.01em">Fleetwatch</span>
+    </div>
+    <a href="Main.dc.html" style="display: block; padding: 12px; border-radius: 8px; color: #C9CDD4; text-decoration: none">Home</a>
+    <a href="Device.dc.html" style="display: block; padding: 12px; border-radius: 8px; color: #C9CDD4; text-decoration: none">Computers</a>
+    <a href="Deploy.dc.html" style="display: block; padding: 12px; border-radius: 8px; color: #C9CDD4; text-decoration: none">Install apps</a>
+    <a href="Remote.dc.html" style="display: block; padding: 12px; border-radius: 8px; color: #C9CDD4; text-decoration: none">Help sessions</a>
+    <a href="Tickets.dc.html" style="display: flex; justify-content: space-between; padding: 12px; border-radius: 8px; color: #C9CDD4; text-decoration: none">Tickets <span style="background: #C26A0A; color: #FFFFFF; font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 999px">2</span></a>
+    <a href="Network.dc.html" style="display: block; padding: 12px; border-radius: 8px; background: #262A33; color: #FFFFFF; text-decoration: none; font-weight: 600">Networks</a>
+    <div style="margin-top: auto; padding: 16px 8px 0; border-top: 1px solid #2E333D; font-size: 13px; color: #A9AFB9">Signed in as Adam</div>
+  </nav>
+
+  <main style="flex: 999 1 560px; min-width: 0; padding: 40px 48px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px">
+    <header style="display: flex; flex-direction: column; gap: 16px">
+      <h1 style="margin: 0; font-size: 32px; font-weight: 700; letter-spacing: -0.02em">Networks</h1>
+      <div role="tablist" aria-label="Homes" style="display: flex; flex-wrap: wrap; gap: 8px">
+        <button type="button" role="tab" aria-selected="false" style="padding: 10px 16px; border-radius: 999px; border: 1px solid #C4C9D1; background: #FFFFFF; font: inherit; cursor: pointer; display: flex; align-items: center; gap: 8px"><span style="width: 8px; height: 8px; border-radius: 50%; background: #1F8A4C" aria-hidden="true"></span>My place</button>
+        <button type="button" role="tab" aria-selected="true" style="padding: 10px 16px; border-radius: 999px; border: 0; background: #15181E; color: #FFFFFF; font: inherit; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 8px"><span style="width: 8px; height: 8px; border-radius: 50%; background: #3CC274" aria-hidden="true"></span>Mom &amp; Dad's house</button>
+        <button type="button" role="tab" aria-selected="false" style="padding: 10px 16px; border-radius: 999px; border: 1px solid #C4C9D1; background: #FFFFFF; font: inherit; cursor: pointer; display: flex; align-items: center; gap: 8px"><span style="width: 8px; height: 8px; border-radius: 50%; background: #8A919C" aria-hidden="true"></span>Grandma's</button>
+      </div>
+    </header>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: stretch">
+      <section aria-label="Internet" style="flex: 2 1 460px; min-width: 0; background: #FFFFFF; border: 1px solid #DCDFE4; border-radius: 12px; padding: 24px; display: flex; flex-direction: column; gap: 18px">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px">
+          <div>
+            <h2 style="margin: 0; font-size: 20px; font-weight: 600">Internet</h2>
+            <div style="color: #146C3A; font-weight: 600; margin-top: 4px">Working normally</div>
+          </div>
+          <button type="button" style="padding: 10px 14px; border-radius: 8px; border: 1px solid #C4C9D1; background: #FFFFFF; font: inherit; font-weight: 500; cursor: pointer">Run a speed test</button>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px">
+          <div><div style="color: #4B5260; font-size: 14px">Download</div><div style="font-size: 26px; font-weight: 700">184 <span style="font-size: 15px; font-weight: 500">Mbps</span></div></div>
+          <div><div style="color: #4B5260; font-size: 14px">Upload</div><div style="font-size: 26px; font-weight: 700">11 <span style="font-size: 15px; font-weight: 500">Mbps</span></div></div>
+          <div><div style="color: #4B5260; font-size: 14px">Response time</div><div style="font-size: 26px; font-weight: 700">18 <span style="font-size: 15px; font-weight: 500">ms</span></div></div>
+        </div>
+        <div>
+          <div style="display: flex; justify-content: space-between; font-size: 14px; color: #4B5260; margin-bottom: 8px"><span>Last 7 days</span><span>Down once: Tue night, 34 min</span></div>
+          <div style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px" aria-label="Uptime by day: down once on Tuesday">
+            <sc-for list="{{days}}" as="d" hint-placeholder-count="7">
+              <div style="display: flex; flex-direction: column; gap: 4px; align-items: center">
+                <div style="width: 100%; height: 36px; border-radius: 6px; background: {{d.color}}"></div>
+                <span style="font-size: 12px; color: #4B5260">{{d.label}}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        <p style="margin: 0; font-size: 13px; color: #4B5260">Checked every 5 minutes by Mom &amp; Dad's Laptop.</p>
+      </section>
+
+      <section aria-label="Quick links" style="flex: 1 1 280px; min-width: 0; background: #FFFFFF; border: 1px solid #DCDFE4; border-radius: 12px; padding: 24px; display: flex; flex-direction: column; gap: 10px">
+        <h2 style="margin: 0 0 4px; font-size: 20px; font-weight: 600">Quick links</h2>
+        <sc-for list="{{links}}" as="l" hint-placeholder-count="4">
+          <a href="#" style="display: flex; flex-direction: column; gap: 2px; padding: 12px 14px; border: 1px solid #ECEEF1; border-radius: 8px; text-decoration: none; color: #15181E">
+            <span style="font-weight: 600">{{l.name}}</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #4B5260">{{l.url}}</span>
+          </a>
+        </sc-for>
+        <button type="button" style="padding: 12px; border-radius: 8px; border: 1px dashed #A9AFB9; background: #FFFFFF; color: #343A45; font: inherit; cursor: pointer">+ Add a link</button>
+      </section>
+    </div>
+
+    <section aria-label="Devices on this network" style="background: #FFFFFF; border: 1px solid #DCDFE4; border-radius: 12px; padding: 24px; display: flex; flex-direction: column; gap: 8px">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 6px">
+        <h2 style="margin: 0; font-size: 20px; font-weight: 600">Devices on the network</h2>
+        <span style="color: #4B5260; font-size: 14px">7 connected · scanned 3 min ago</span>
+      </div>
+      <div style="overflow-x: auto">
+        <div style="min-width: 640px">
+          <div style="display: grid; grid-template-columns: 2fr 1.2fr 1.2fr 1fr; gap: 12px; padding: 10px 0; font-size: 13px; color: #4B5260; font-weight: 600; border-bottom: 1px solid #DCDFE4">
+            <span>Device</span><span>Type</span><span>Address</span><span>Status</span>
+          </div>
+          <sc-for list="{{devices}}" as="d" hint-placeholder-count="8">
+            <div style="display: grid; grid-template-columns: 2fr 1.2fr 1.2fr 1fr; gap: 12px; padding: 12px 0; border-bottom: 1px solid #ECEEF1; align-items: center; font-size: 15px; background: {{d.rowBg}}">
+              <span style="font-weight: 500">{{d.name}}</span>
+              <span style="color: #4B5260">{{d.type}}</span>
+              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #343A45">{{d.ip}}</span>
+              <span style="display: flex; align-items: center; gap: 8px"><span style="width: 8px; height: 8px; border-radius: 50%; background: {{d.dot}}" aria-hidden="true"></span>{{d.status}}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1180}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const g = '#1F8A4C', r = '#B42318';
+    const on = { dot: g, status: 'Connected', rowBg: 'transparent' };
+    const off = { dot: '#8A919C', status: 'Away', rowBg: 'transparent' };
+    return {
+      days: [
+        { label: 'Fri', color: g }, { label: 'Sat', color: g }, { label: 'Sun', color: g }, { label: 'Mon', color: g },
+        { label: 'Tue', color: r }, { label: 'Wed', color: g }, { label: 'Thu', color: g }
+      ],
+      links: [
+        { name: 'Router dashboard', url: '192.168.1.1' },
+        { name: 'Internet provider account', url: '[ISP website]' },
+        { name: 'HP printer settings', url: '192.168.1.42' },
+        { name: 'Wi-Fi password card', url: 'Saved note' }
+      ],
+      devices: [
+        { name: "Mom & Dad's Laptop", type: 'Fleetwatch computer', ip: '192.168.1.20', ...on },
+        { name: 'HP DeskJet 2700', type: 'Printer', ip: '192.168.1.42', dot: '#C26A0A', status: 'Not responding', rowBg: '#FFF8F0' },
+        { name: "Dad's iPhone", type: 'Phone', ip: '192.168.1.31', ...on },
+        { name: "Mom's iPad", type: 'Tablet', ip: '192.168.1.33', ...on },
+        { name: 'Living room TV', type: 'Smart TV', ip: '192.168.1.50', ...on },
+        { name: 'Ring doorbell', type: 'Camera', ip: '192.168.1.61', ...on },
+        { name: 'Unknown device', type: 'New this week', ip: '192.168.1.77', dot: '#2B4FB8', status: 'Connected · new', rowBg: '#F1F4FD' },
+        { name: 'Thermostat', type: 'Smart home', ip: '192.168.1.65', ...off }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

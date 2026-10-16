@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Fleetwatch on a family computer</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div style="width: 420px; height: 760px; box-sizing: border-box; padding: 24px; background: #DDE3EA; font-family: 'IBM Plex Sans', system-ui, sans-serif; color: #15181E; display: flex; flex-direction: column; gap: 20px">
+
+  <section aria-label="Tray popup" style="background: #FFFFFF; border-radius: 14px; box-shadow: 0 8px 28px rgba(21,24,30,0.18); padding: 22px; display: flex; flex-direction: column; gap: 14px">
+    <div style="display: flex; align-items: center; gap: 10px">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0E6B66" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12s3.5-6 9-6 9 6 9 6-3.5 6-9 6-9-6-9-6z"></path><circle cx="12" cy="12" r="2.5"></circle></svg>
+      <span style="font-weight: 700; font-size: 17px">Fleetwatch</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 8px; font-size: 15px; color: #146C3A"><span style="width: 10px; height: 10px; border-radius: 50%; background: #1F8A4C" aria-hidden="true"></span>Adam is looking after this computer</div>
+    <label for="what" style="font-size: 15px; font-weight: 500">What's going on? (optional)</label>
+    <textarea id="what" rows="3" style="font: inherit; font-size: 16px; padding: 10px 12px; border: 1px solid #C4C9D1; border-radius: 8px; resize: none">The printer says it's offline again.</textarea>
+    <button type="button" style="padding: 16px; border-radius: 10px; border: 0; background: {{accent}}; color: #FFFFFF; font: inherit; font-size: 18px; font-weight: 600; cursor: pointer">Ask Adam for help</button>
+    <p style="margin: 0; font-size: 13px; color: #4B5260">Adam gets a notification on his phone.</p>
+  </section>
+
+  <section aria-label="Permission prompt" style="background: #FFFFFF; border-radius: 14px; box-shadow: 0 8px 28px rgba(21,24,30,0.18); padding: 22px; display: flex; flex-direction: column; gap: 14px; border-top: 6px solid #9A4A06">
+    <h2 style="margin: 0; font-size: 20px; font-weight: 700">Adam wants to see your screen</h2>
+    <p style="margin: 0; font-size: 16px; color: #343A45">He'll be able to move the mouse to help fix things. You can stop it any time.</p>
+    <div style="display: flex; gap: 10px">
+      <button type="button" style="flex: 1; padding: 14px; border-radius: 10px; border: 0; background: {{accent}}; color: #FFFFFF; font: inherit; font-size: 17px; font-weight: 600; cursor: pointer">Allow</button>
+      <button type="button" style="flex: 1; padding: 14px; border-radius: 10px; border: 1px solid #C4C9D1; background: #FFFFFF; color: #15181E; font: inherit; font-size: 17px; font-weight: 500; cursor: pointer">Not now</button>
+    </div>
+    <p style="margin: 0; font-size: 13px; color: #4B5260">A colored border stays around the screen while Adam is connected.</p>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#0E6B66","options":["#0E6B66","#2B4FB8","#7A3E9D"]},"$preview":{"width":420,"height":760}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { accent: this.props.accent ?? '#0E6B66' };
+  }
+}
+</script>
+</body>
+</html>

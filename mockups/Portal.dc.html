@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ask Adam for help</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F6F4EF}
+a{color:#0E6B66}a:hover{color:#094A47}
+</style>
+</helmet>
+<div style="min-height: 100vh; font-family: 'IBM Plex Sans', system-ui, sans-serif; color: #15181E; background: #F6F4EF; font-size: 18px">
+  <header style="background: #FFFFFF; border-bottom: 1px solid #E2DED5">
+    <div style="max-width: 880px; margin: 0 auto; padding: 18px 20px; display: flex; justify-content: space-between; align-items: center; gap: 12px">
+      <div style="display: flex; align-items: center; gap: 10px">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="{{accent}}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12s3.5-6 9-6 9 6 9 6-3.5 6-9 6-9-6-9-6z"></path><circle cx="12" cy="12" r="2.5"></circle></svg>
+        <span style="font-weight: 700; font-size: 20px">Adam's Tech Help</span>
+      </div>
+      <span style="font-size: 16px; color: #4B5260">Signed in as Mom</span>
+    </div>
+  </header>
+
+  <main style="max-width: 880px; margin: 0 auto; padding: 40px 20px 64px; display: flex; flex-direction: column; gap: 32px">
+    <div>
+      <h1 style="margin: 0; font-size: 40px; font-weight: 700; letter-spacing: -0.02em">Hi Mom! What do you need help with?</h1>
+      <p style="margin: 10px 0 0; color: #4B5260">Tell Adam what's wrong and he'll get back to you. No need to know the technical words.</p>
+    </div>
+
+    <form style="background: #FFFFFF; border: 1px solid #E2DED5; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 22px">
+      <fieldset style="border: 0; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px">
+        <legend style="font-weight: 600; margin-bottom: 12px">What's it about?</legend>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px">
+          <label style="display: flex; align-items: center; gap: 10px; padding: 16px; border: 2px solid {{accent}}; border-radius: 12px; background: #EEF7F6; cursor: pointer; font-weight: 600"><input type="radio" name="topic" checked style="width: 20px; height: 20px; accent-color: #0E6B66">Printer</label>
+          <label style="display: flex; align-items: center; gap: 10px; padding: 16px; border: 1px solid #CFCAC0; border-radius: 12px; cursor: pointer"><input type="radio" name="topic" style="width: 20px; height: 20px; accent-color: #0E6B66">Email</label>
+          <label style="display: flex; align-items: center; gap: 10px; padding: 16px; border: 1px solid #CFCAC0; border-radius: 12px; cursor: pointer"><input type="radio" name="topic" style="width: 20px; height: 20px; accent-color: #0E6B66">Internet / Wi-Fi</label>
+          <label style="display: flex; align-items: center; gap: 10px; padding: 16px; border: 1px solid #CFCAC0; border-radius: 12px; cursor: pointer"><input type="radio" name="topic" style="width: 20px; height: 20px; accent-color: #0E6B66">Something else</label>
+        </div>
+      </fieldset>
+
+      <label style="display: flex; flex-direction: column; gap: 8px; font-weight: 600">Which device?
+        <select style="font: inherit; font-weight: 400; padding: 14px; border: 1px solid #CFCAC0; border-radius: 10px; background: #FFFFFF; color: #15181E">
+          <option>Our laptop</option><option>My iPad</option><option>Dad's iPhone</option><option>Not sure</option>
+        </select>
+      </label>
+
+      <label style="display: flex; flex-direction: column; gap: 8px; font-weight: 600">What's going on?
+        <textarea rows="4" style="font: inherit; font-weight: 400; padding: 14px; border: 1px solid #CFCAC0; border-radius: 10px; resize: vertical">I tried to print the church newsletter and it says the printer is offline.</textarea>
+      </label>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center">
+        <button type="button" style="padding: 14px 18px; border-radius: 10px; border: 1px solid #CFCAC0; background: #FFFFFF; font: inherit; cursor: pointer">Add a picture of the screen</button>
+        <label style="display: flex; align-items: center; gap: 10px"><input type="checkbox" checked style="width: 20px; height: 20px; accent-color: #0E6B66">It's urgent</label>
+      </div>
+
+      <button type="submit" style="padding: 18px; border-radius: 12px; border: 0; background: {{accent}}; color: #FFFFFF; font: inherit; font-size: 20px; font-weight: 700; cursor: pointer">Send to Adam</button>
+    </form>
+
+    <section aria-label="Your requests" style="display: flex; flex-direction: column; gap: 12px">
+      <h2 style="margin: 0; font-size: 24px; font-weight: 700">Your requests</h2>
+      <div style="background: #FFFFFF; border: 1px solid #E2DED5; border-radius: 14px; padding: 18px 20px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; align-items: center">
+        <div><div style="font-weight: 600">Printer says offline again</div><div style="color: #4B5260; font-size: 16px">Today · Adam replied: "Connecting now."</div></div>
+        <span style="padding: 6px 14px; border-radius: 999px; background: #E3F1F0; color: #0A4F4B; font-size: 15px; font-weight: 600">Adam is on it</span>
+      </div>
+      <div style="background: #FFFFFF; border: 1px solid #E2DED5; border-radius: 14px; padding: 18px 20px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; align-items: center">
+        <div><div style="font-weight: 600">Set up Zoom for book club</div><div style="color: #4B5260; font-size: 16px">Last month</div></div>
+        <span style="padding: 6px 14px; border-radius: 999px; background: #EEF0F3; color: #343A45; font-size: 15px; font-weight: 600">Done</span>
+      </div>
+    </section>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#0E6B66","options":["#0E6B66","#2B4FB8","#7A3E9D"]},"$preview":{"width":1440,"height":1100}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { accent: this.props.accent ?? '#0E6B66' };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Viewing Mom's iPad</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#15181E}
+a{color:#8FDAD4}a:hover{color:#BDEBE7}
+</style>
+</helmet>
+<div style="min-height: 100vh; display: flex; flex-direction: column; font-family: 'IBM Plex Sans', system-ui, sans-serif; color: #E6E8EC; background: #15181E">
+
+  <header style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px; padding: 14px 24px; border-bottom: 1px solid #2E333D">
+    <a href="Mobile.dc.html" style="text-decoration: none; font-size: 14px">← Mom's iPad</a>
+    <div style="flex: 1 1 260px; min-width: 0">
+      <div style="font-weight: 600; font-size: 17px">Viewing Mom's iPad</div>
+      <div style="font-size: 13px; color: #A9AFB9; display: flex; align-items: center; gap: 8px"><span style="width: 8px; height: 8px; border-radius: 50%; background: #E5484D" aria-hidden="true"></span>Live · Mom started sharing at 10:21 · view only</div>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 8px">
+      <button type="button" style="padding: 10px 14px; border-radius: 8px; border: 1px solid #3A404B; background: #20242C; color: #E6E8EC; font: inherit; font-size: 14px; cursor: pointer">Save a screenshot</button>
+      <button type="button" style="padding: 10px 14px; border-radius: 8px; border: 1px solid #3A404B; background: #20242C; color: #E6E8EC; font: inherit; font-size: 14px; cursor: pointer">FaceTime Mom</button>
+      <button type="button" style="padding: 10px 14px; border-radius: 8px; border: 0; background: #B42318; color: #FFFFFF; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer">Stop viewing</button>
+    </div>
+  </header>
+
+  <div style="flex: 1; display: flex; flex-wrap: wrap; gap: 24px; padding: 24px; box-sizing: border-box">
+    <section aria-label="Her screen" style="flex: 999 1 560px; min-width: 0; display: flex; justify-content: center; align-items: center; background: #0E1014; border-radius: 12px; padding: 24px">
+      <div style="width: 100%; max-width: 520px; aspect-ratio: 820 / 1180; border-radius: 28px; border: 10px solid #2A2E36; background: #F2F2F7; overflow: hidden; display: flex; flex-direction: column; color: #15181E">
+        <div style="padding: 28px 24px 12px; font-size: 26px; font-weight: 700">Settings</div>
+        <div style="margin: 0 18px; background: #FFFFFF; border-radius: 12px; overflow: hidden; font-size: 15px">
+          <div style="padding: 14px 16px; border-bottom: 1px solid #E5E5EA; display: flex; justify-content: space-between"><span>Wi-Fi</span><span style="color: #6B7280">Home network</span></div>
+          <div style="padding: 14px 16px; border-bottom: 1px solid #E5E5EA; display: flex; justify-content: space-between"><span>Bluetooth</span><span style="color: #6B7280">On</span></div>
+          <div style="padding: 14px 16px; background: #E7EEFB; display: flex; justify-content: space-between"><span style="font-weight: 600">General</span><span style="color: #6B7280">1 update</span></div>
+        </div>
+        <div style="margin: 18px; background: #FFFFFF; border-radius: 12px; overflow: hidden; font-size: 15px">
+          <div style="padding: 14px 16px; border-bottom: 1px solid #E5E5EA">Notifications</div>
+          <div style="padding: 14px 16px; border-bottom: 1px solid #E5E5EA">Sounds</div>
+          <div style="padding: 14px 16px">Display &amp; Brightness</div>
+        </div>
+      </div>
+    </section>
+
+    <aside aria-label="Talk to Mom" style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+      <div style="background: #20242C; border: 1px solid #2E333D; border-radius: 10px; padding: 18px; display: flex; flex-direction: column; gap: 10px">
+        <h2 style="margin: 0 0 4px; font-size: 16px; font-weight: 600">Chat with Mom</h2>
+        <div style="align-self: flex-end; max-width: 85%; background: {{accent}}; color: #FFFFFF; padding: 10px 12px; border-radius: 10px; font-size: 14px">I can see it! Tap "General", the one that's highlighted.</div>
+        <div style="align-self: flex-start; max-width: 85%; background: #2E333D; padding: 10px 12px; border-radius: 10px; font-size: 14px">ok done</div>
+        <label for="msg" style="font-size: 13px; color: #A9AFB9; margin-top: 6px">Message</label>
+        <input id="msg" type="text" placeholder="Type a message…" style="font: inherit; font-size: 14px; padding: 10px 12px; border-radius: 8px; border: 1px solid #3A404B; background: #15181E; color: #E6E8EC">
+      </div>
+      <div style="background: #20242C; border: 1px solid #2E333D; border-radius: 10px; padding: 18px; display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: #C9CDD4">
+        <h2 style="margin: 0 0 4px; font-size: 16px; font-weight: 600; color: #E6E8EC">Good to know</h2>
+        <p style="margin: 0">Passwords and protected video show as black on your end.</p>
+        <p style="margin: 0">Sharing stops if Mom taps the red indicator on her screen.</p>
+      </div>
+    </aside>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#0E6B66","options":["#0E6B66","#2B4FB8","#7A3E9D"]},"$preview":{"width":1440,"height":960}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { accent: this.props.accent ?? '#0E6B66' };
+  }
+}
+</script>
+</body>
+</html>

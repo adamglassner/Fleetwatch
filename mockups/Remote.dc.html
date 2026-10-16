@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Helping Mom and Dad</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#15181E}
+a{color:#8FDAD4}a:hover{color:#BDEBE7}
+</style>
+</helmet>
+<div style="min-height: 100vh; display: flex; flex-direction: column; font-family: 'IBM Plex Sans', system-ui, sans-serif; color: #E6E8EC; background: #15181E">
+
+  <header style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px; padding: 14px 24px; border-bottom: 1px solid #2E333D">
+    <a href="Main.dc.html" style="text-decoration: none; font-size: 14px">← Home</a>
+    <div style="flex: 1 1 260px; min-width: 0">
+      <div style="font-weight: 600; font-size: 17px">Helping Mom &amp; Dad's Laptop</div>
+      <div style="font-size: 13px; color: #A9AFB9; display: flex; align-items: center; gap: 8px"><span style="width: 8px; height: 8px; border-radius: 50%; background: #3CC274" aria-hidden="true"></span>Connected · Mom said yes at 10:14 · connection good</div>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 8px">
+      <button type="button" style="padding: 10px 14px; border-radius: 8px; border: 1px solid #3A404B; background: #20242C; color: #E6E8EC; font: inherit; font-size: 14px; cursor: pointer">View only</button>
+      <button type="button" style="padding: 10px 14px; border-radius: 8px; border: 1px solid #3A404B; background: #20242C; color: #E6E8EC; font: inherit; font-size: 14px; cursor: pointer">Send a file</button>
+      <button type="button" style="padding: 10px 14px; border-radius: 8px; border: 1px solid #3A404B; background: #20242C; color: #E6E8EC; font: inherit; font-size: 14px; cursor: pointer">Ctrl+Alt+Del</button>
+      <button type="button" style="padding: 10px 14px; border-radius: 8px; border: 0; background: #B42318; color: #FFFFFF; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer">End session</button>
+    </div>
+  </header>
+
+  <div style="flex: 1; display: flex; flex-wrap: wrap; gap: 20px; padding: 20px 24px; box-sizing: border-box">
+
+    <section aria-label="Their screen" style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column">
+      <div style="flex: 1; min-height: 560px; border-radius: 10px; background: #2F5D7C; position: relative; overflow: hidden; border: 1px solid #3A404B">
+        <div style="position: absolute; left: 12%; top: 12%; width: 56%; min-width: 300px; background: #FFFFFF; color: #15181E; border-radius: 8px; box-shadow: 0 12px 40px rgba(0,0,0,0.35)">
+          <div style="padding: 10px 14px; border-bottom: 1px solid #E3E6EA; font-size: 14px; font-weight: 600">Printers &amp; scanners</div>
+          <div style="padding: 18px; display: flex; flex-direction: column; gap: 12px; font-size: 14px">
+            <div style="display: flex; justify-content: space-between; padding: 12px; border: 1px solid #E3E6EA; border-radius: 6px"><span>HP DeskJet 2700</span><span style="color: #9B1C14; font-weight: 600">Offline</span></div>
+            <div style="display: flex; justify-content: space-between; padding: 12px; border: 1px solid #E3E6EA; border-radius: 6px"><span>Microsoft Print to PDF</span><span style="color: #4B5260">Ready</span></div>
+          </div>
+        </div>
+        <div style="position: absolute; left: 0; right: 0; bottom: 0; height: 44px; background: rgba(20,24,30,0.85); display: flex; align-items: center; padding: 0 16px; font-size: 13px; color: #C9CDD4">Their taskbar</div>
+        <div style="position: absolute; top: 12px; right: 12px; padding: 6px 12px; border-radius: 999px; background: rgba(20,24,30,0.8); font-size: 12px">Their screen · 1920 × 1080</div>
+      </div>
+    </section>
+
+    <aside aria-label="Chat and quick fixes" style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+      <div style="background: #20242C; border: 1px solid #2E333D; border-radius: 10px; padding: 18px; display: flex; flex-direction: column; gap: 10px">
+        <h2 style="margin: 0 0 4px; font-size: 16px; font-weight: 600">Chat with Mom</h2>
+        <div style="align-self: flex-start; max-width: 85%; background: #2E333D; padding: 10px 12px; border-radius: 10px; font-size: 14px">The printer says it's offline again</div>
+        <div style="align-self: flex-end; max-width: 85%; background: {{accent}}; color: #FFFFFF; padding: 10px 12px; border-radius: 10px; font-size: 14px">I can see your screen now. Don't touch the mouse for a minute!</div>
+        <label for="chatmsg" style="font-size: 13px; color: #A9AFB9; margin-top: 6px">Message</label>
+        <input id="chatmsg" type="text" placeholder="Type a message…" style="font: inherit; font-size: 14px; padding: 10px 12px; border-radius: 8px; border: 1px solid #3A404B; background: #15181E; color: #E6E8EC">
+      </div>
+      <div style="background: #20242C; border: 1px solid #2E333D; border-radius: 10px; padding: 18px; display: flex; flex-direction: column; gap: 8px">
+        <h2 style="margin: 0 0 4px; font-size: 16px; font-weight: 600">Quick fixes</h2>
+        <button type="button" style="text-align: left; padding: 12px; border-radius: 8px; border: 1px solid #3A404B; background: #15181E; color: #E6E8EC; font: inherit; font-size: 14px; cursor: pointer">Restart the print service</button>
+        <button type="button" style="text-align: left; padding: 12px; border-radius: 8px; border: 1px solid #3A404B; background: #15181E; color: #E6E8EC; font: inherit; font-size: 14px; cursor: pointer">Clear stuck print jobs</button>
+        <button type="button" style="text-align: left; padding: 12px; border-radius: 8px; border: 1px solid #3A404B; background: #15181E; color: #E6E8EC; font: inherit; font-size: 14px; cursor: pointer">Open Task Manager</button>
+        <a href="Device.dc.html" style="font-size: 14px; margin-top: 4px">See this computer's problems</a>
+      </div>
+    </aside>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#0E6B66","options":["#0E6B66","#2B4FB8","#7A3E9D"]},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { accent: this.props.accent ?? '#0E6B66' };
+  }
+}
+</script>
+</body>
+</html>
