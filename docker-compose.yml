@@ -1,0 +1,20 @@
+services:
+  server:
+    build: ./server
+    image: fleetwatch-server:latest
+    container_name: fleetwatch-server
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      PORT: "8080"
+      DATABASE_PATH: /app/data/fleetwatch.db
+      # Set these in a .env file next to this compose file:
+      JWT_SECRET: "${JWT_SECRET}"
+      JWT_EXPIRES_IN: "${JWT_EXPIRES_IN:-7d}"
+      CORS_ORIGIN: "${CORS_ORIGIN:-*}"
+    volumes:
+      - fleetwatch-data:/app/data
+
+volumes:
+  fleetwatch-data:

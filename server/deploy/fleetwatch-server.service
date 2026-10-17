@@ -1,0 +1,29 @@
+# systemd unit for running the Fleetwatch server directly on Linux
+# (an alternative to Docker).
+#
+# 1. Build:   cd /opt/fleetwatch/server && npm ci && npm run build
+# 2. Copy:    sudo cp deploy/fleetwatch-server.service /etc/systemd/system/
+# 3. Edit the paths / user below to match your machine.
+# 4. Enable:  sudo systemctl daemon-reload && sudo systemctl enable --now fleetwatch-server
+# 5. Logs:    journalctl -u fleetwatch-server -f
+
+[Unit]
+Description=Fleetwatch server
+After=network.target
+
+[Service]
+Type=simple
+User=fleetwatch
+WorkingDirectory=/opt/fleetwatch/server
+# Put your settings in /opt/fleetwatch/server/.env
+EnvironmentFile=/opt/fleetwatch/server/.env
+ExecStart=/usr/bin/node dist/index.js
+Restart=on-failure
+RestartSec=5
+# Basic hardening
+NoNewPrivileges=true
+ProtectSystem=full
+ProtectHome=true
+
+[Install]
+WantedBy=multi-user.target

@@ -65,9 +65,28 @@ defaults, and the device owner always in control.
 ## Repo layout
 
 ```
-mockups/   UI mockups (Claude Design canvas source: *.dc.html + canvas.json)
+server/          Linux server — Node + TypeScript + Fastify + SQLite  (see server/README.md)
+agent-windows/   Windows agent — C# / .NET service + installer        (see agent-windows/README.md)
+mockups/         UI mockups (Claude Design canvas source: *.dc.html + canvas.json)
+.github/         CI: builds the server image and the agent installer
+docker-compose.yml
 ```
 
 The `.dc.html` files are the source for the design-canvas mockups and are
 viewed inside the Claude artifact; they reference a canvas runtime and are not
 standalone web pages.
+
+## Building so far
+
+The first two pieces are in place: the **server** and the **Windows agent**.
+
+- **Server:** runs on Linux via Docker (`docker compose up -d --build`) or
+  systemd. See [`server/README.md`](server/README.md).
+- **Windows agent:** installed by `FleetwatchAgentSetup.exe`, which GitHub
+  Actions builds on every push (Actions tab → latest run → artifacts). See
+  [`agent-windows/README.md`](agent-windows/README.md).
+
+What works today: device enrollment, scheduled check-ins with health + pending
+Windows Updates + recent error logs, and remotely queued commands (install an
+app via winget, install updates, restart). The admin dashboard UI, the family
+help website, and remote screen view are still mockups.

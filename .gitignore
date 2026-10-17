@@ -21,9 +21,20 @@ __pycache__/
 venv/
 *.egg-info/
 
+# .NET (Windows agent)
+bin/
+obj/
+publish/
+Output/
+*.user
+
+# Server data (SQLite)
+server/data/
+
 # Env / secrets
 .env
 .env.*
+!.env.example
 *.local
 
 # Logs

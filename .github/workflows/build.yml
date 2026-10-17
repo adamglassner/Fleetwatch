@@ -1,0 +1,57 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  pull_request:
+    branches: [main]
+
+jobs:
+  server:
+    name: Server (Linux)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: server
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      # No committed lockfile yet, so use install (not ci). Once you run
+      # `npm install` locally and commit package-lock.json, switch this to
+      # `npm ci` and re-enable setup-node's npm cache.
+      - run: npm install --no-audit --no-fund
+      - run: npm run build
+      - name: Build Docker image
+        working-directory: .
+        run: docker build -t fleetwatch-server:ci ./server
+
+  agent:
+    name: Windows agent + installer
+    runs-on: windows-latest
+    defaults:
+      run:
+        working-directory: agent-windows
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+      - name: Publish self-contained agent
+        run: dotnet publish Fleetwatch.Agent.csproj -c Release -o publish
+      - name: Install Inno Setup
+        run: choco install innosetup --no-progress -y
+      - name: Compile installer
+        run: '& "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe" installer\fleetwatch-agent.iss'
+      - name: Upload installer artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: FleetwatchAgentSetup
+          path: agent-windows/Output/FleetwatchAgentSetup.exe
+      - name: Attach installer to release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: agent-windows/Output/FleetwatchAgentSetup.exe
