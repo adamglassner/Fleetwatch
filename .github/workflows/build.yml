@@ -8,6 +8,16 @@ on:
     types: [published]
   pull_request:
     branches: [main]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Tag/release to create and attach the installer to (e.g. v0.1.0)"
+        required: true
+        default: v0.1.0
+
+# Needed so the Actions runner can create a release and upload the installer.
+permissions:
+  contents: write
 
 jobs:
   server:
@@ -61,7 +71,10 @@ jobs:
           name: FleetwatchAgentSetup
           path: agent-windows/Output/FleetwatchAgentSetup.exe
       - name: Attach installer to release
-        if: startsWith(github.ref, 'refs/tags/v')
+        if: startsWith(github.ref, 'refs/tags/v') || github.event_name == 'release' || github.event_name == 'workflow_dispatch'
         uses: softprops/action-gh-release@v2
         with:
+          # On a manual run, create (or reuse) this tag/release at the current
+          # commit. On a tag push or release event, fall back to that ref.
+          tag_name: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || '' }}
           files: agent-windows/Output/FleetwatchAgentSetup.exe
