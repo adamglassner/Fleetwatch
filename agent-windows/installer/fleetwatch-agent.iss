@@ -92,7 +92,7 @@ begin
   Result := R;
 end;
 
-procedure WriteAppSettings();
+procedure WriteAppSettings;
 var
   AppDir, FilePath, ServerUrl, Token, Json: String;
 begin
@@ -118,13 +118,15 @@ begin
 end;
 
 procedure CurStepChanged(CurStep: TSetupStep);
+var
+  ResultCode: Integer;
 begin
   if CurStep = ssInstall then
   begin
     // Stop/remove any previous service before copying the new exe.
-    Exec(ExpandConstant('{sys}\sc.exe'), 'stop {#ServiceName}', '', SW_HIDE, ewWaitUntilTerminated, nil);
-    Exec(ExpandConstant('{sys}\sc.exe'), 'delete {#ServiceName}', '', SW_HIDE, ewWaitUntilTerminated, nil);
+    Exec(ExpandConstant('{sys}\sc.exe'), 'stop {#ServiceName}', '', SW_HIDE, ewWaitUntilTerminated, ResultCode);
+    Exec(ExpandConstant('{sys}\sc.exe'), 'delete {#ServiceName}', '', SW_HIDE, ewWaitUntilTerminated, ResultCode);
   end;
   if CurStep = ssPostInstall then
-    WriteAppSettings();
+    WriteAppSettings;
 end;
