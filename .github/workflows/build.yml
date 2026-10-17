@@ -43,8 +43,16 @@ jobs:
         run: dotnet publish Fleetwatch.Agent.csproj -c Release -o publish
       - name: Install Inno Setup
         run: choco install innosetup --no-progress -y
+      - name: Show publish output + Inno Setup version
+        shell: cmd
+        run: |
+          echo --- publish dir ---
+          dir publish
+          echo --- ISCC version ---
+          "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" /? | more +1 | findstr /i "Inno" || ver
       - name: Compile installer
-        run: '& "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe" installer\fleetwatch-agent.iss'
+        shell: cmd
+        run: '"C:\Program Files (x86)\Inno Setup 6\ISCC.exe" installer\fleetwatch-agent.iss'
       - name: Upload installer artifact
         uses: actions/upload-artifact@v4
         with:

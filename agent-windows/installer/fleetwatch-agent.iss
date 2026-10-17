@@ -28,7 +28,7 @@ OutputDir=..\Output
 Compression=lzma2
 SolidCompression=yes
 PrivilegesRequired=admin
-ArchitecturesInstallIn64BitMode=x64compatible
+ArchitecturesInstallIn64BitMode=x64
 WizardStyle=modern
 
 [Files]
