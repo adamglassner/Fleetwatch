@@ -67,6 +67,7 @@ defaults, and the device owner always in control.
 ```
 server/          Linux server — Node + TypeScript + Fastify + SQLite  (see server/README.md)
 agent-windows/   Windows agent — C# / .NET service + installer        (see agent-windows/README.md)
+client-windows/  Windows client — WPF desktop shell (what the launcher installs)  (see client-windows/README.md)
 mockups/         UI mockups (Claude Design canvas source: *.dc.html + canvas.json)
 .github/         CI: builds the server image and the agent installer
 docker-compose.yml
