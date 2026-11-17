@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>Fleetwatch.Client</RootNamespace>
+    <AssemblyName>Fleetwatch</AssemblyName>
+    <Version>0.2.0</Version>
+    <ApplicationIcon>assets\fleetwatch.ico</ApplicationIcon>
+
+    <!-- Self-contained so a PC needs no .NET install. WPF keeps a few native
+         DLLs beside the exe, so this ships as a zip (not a single file). -->
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <SelfContained>true</SelfContained>
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Resource Include="assets\fleetwatch-256.png" />
+  </ItemGroup>
+
+</Project>

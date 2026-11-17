@@ -1,0 +1,94 @@
+<Window x:Class="Fleetwatch.Client.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Fleetwatch" Height="640" Width="980"
+        MinHeight="480" MinWidth="760"
+        WindowStartupLocation="CenterScreen"
+        Background="{StaticResource Canvas}"
+        Icon="pack://application:,,,/assets/fleetwatch-256.png"
+        FontFamily="Segoe UI">
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="64" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+
+    <!-- Header -->
+    <Border Grid.Row="0">
+      <Border.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+          <GradientStop Color="#FF158E82" Offset="0" />
+          <GradientStop Color="#FF0A4F4B" Offset="1" />
+        </LinearGradientBrush>
+      </Border.Background>
+      <Grid Margin="20,0">
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+          <Image Source="pack://application:,,,/assets/fleetwatch-256.png"
+                 Width="32" Height="32" />
+          <TextBlock Text="Fleetwatch" Foreground="White" FontSize="20"
+                     FontWeight="SemiBold" VerticalAlignment="Center" Margin="12,0,0,0" />
+        </StackPanel>
+        <Border HorizontalAlignment="Right" VerticalAlignment="Center"
+                Background="#33FFFFFF" CornerRadius="999" Padding="12,4">
+          <TextBlock Text="Preview" Foreground="White" FontSize="12" />
+        </Border>
+      </Grid>
+    </Border>
+
+    <!-- Content -->
+    <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+      <StackPanel MaxWidth="760" Margin="24,40,24,32" HorizontalAlignment="Center">
+        <TextBlock Text="Welcome to Fleetwatch"
+                   FontSize="30" FontWeight="Bold" Foreground="{StaticResource Ink}" />
+        <TextBlock Text="Look after the computers you and your family rely on — from one place."
+                   FontSize="16" Foreground="{StaticResource Muted}" Margin="0,8,0,0"
+                   TextWrapping="Wrap" />
+
+        <Border Style="{StaticResource Card}" Margin="0,28,0,0" Background="#FFEAF3F2"
+                BorderBrush="#FFBFE0DC">
+          <StackPanel>
+            <TextBlock Text="This is an early preview"
+                       FontSize="16" FontWeight="SemiBold" Foreground="#FF0A3F3C" />
+            <TextBlock Margin="0,6,0,0" Foreground="#FF0A3F3C" TextWrapping="Wrap"
+                       Text="The app shell is here. The features below are on the way — this build just gets Fleetwatch onto your computer so it can update itself from here on." />
+          </StackPanel>
+        </Border>
+
+        <TextBlock Text="Coming soon" FontSize="13" FontWeight="SemiBold"
+                   Foreground="{StaticResource Muted}" Margin="2,28,0,10" />
+        <UniformGrid Columns="3" Rows="1">
+          <Border Style="{StaticResource Card}" Margin="0,0,8,0">
+            <StackPanel>
+              <TextBlock Text="Computers" FontWeight="SemiBold" FontSize="15"
+                         Foreground="{StaticResource Ink}" />
+              <TextBlock Text="See every PC's status and updates at a glance."
+                         Foreground="{StaticResource Muted}" FontSize="13"
+                         TextWrapping="Wrap" Margin="0,6,0,0" />
+            </StackPanel>
+          </Border>
+          <Border Style="{StaticResource Card}" Margin="4,0,4,0">
+            <StackPanel>
+              <TextBlock Text="Updates &amp; apps" FontWeight="SemiBold" FontSize="15"
+                         Foreground="{StaticResource Ink}" />
+              <TextBlock Text="Install updates and apps remotely, no fuss."
+                         Foreground="{StaticResource Muted}" FontSize="13"
+                         TextWrapping="Wrap" Margin="0,6,0,0" />
+            </StackPanel>
+          </Border>
+          <Border Style="{StaticResource Card}" Margin="8,0,0,0">
+            <StackPanel>
+              <TextBlock Text="Help requests" FontWeight="SemiBold" FontSize="15"
+                         Foreground="{StaticResource Ink}" />
+              <TextBlock Text="Family sends a request; you connect and help."
+                         Foreground="{StaticResource Muted}" FontSize="13"
+                         TextWrapping="Wrap" Margin="0,6,0,0" />
+            </StackPanel>
+          </Border>
+        </UniformGrid>
+
+        <TextBlock x:Name="VersionText" Margin="2,28,0,0"
+                   Foreground="{StaticResource Muted}" FontSize="12" />
+      </StackPanel>
+    </ScrollViewer>
+  </Grid>
+</Window>
